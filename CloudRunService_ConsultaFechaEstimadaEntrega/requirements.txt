@@ -1,0 +1,10 @@
+Flask
+gunicorn==20.1.0
+itsdangerous==2.0.1
+markupsafe==2.0.1
+Flask-Jsonpify
+requests
+google-cloud-firestore
+google-cloud-storage
+pytz
+regex

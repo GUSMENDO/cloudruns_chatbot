@@ -1,0 +1,25 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      ["build", "-t", "gcr.io/${_PROJECT_ID}/consultar-fecha-estimada-entrega", "./CloudRunServices/CloudRunService_ConsultaFechaEstimadaEntrega"]
+
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/${_PROJECT_ID}/consultar-fecha-estimada-entrega"]
+
+  - name: "gcr.io/cloud-builders/gcloud"
+    args:
+      [
+        "run",
+        "deploy",
+        "consultar-fecha-estimada-entrega",
+        "--image",
+        "gcr.io/${_PROJECT_ID}/consultar-fecha-estimada-entrega",
+        "--region",
+        "us-east4",
+        "--platform",
+        "managed",
+        "--service-account",
+        "${_SERVICE_ACCOUNT}",
+        "--vpc-connector",
+        "${_VPC_CONECTOR}"
+      ]
