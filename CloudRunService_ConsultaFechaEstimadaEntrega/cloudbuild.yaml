@@ -18,4 +18,8 @@ steps:
         "us-east4",
         "--platform",
         "managed",
+        "--service-account",
+        "${_SERVICE_ACCOUNT}",
+        "--vpc-connector",
+        "${_VPC_CONECTOR}"
       ]
