@@ -11,9 +11,9 @@ steps:
       [
         "run",
         "deploy",
-        "consultar-fecha-estimada-entrega",
+        "consultar-fecha-estimada-entrega-cloudbuild",
         "--image",
-        "gcr.io/${_PROJECT_ID}/consultar-fecha-estimada-entrega",
+        "gcr.io/${_PROJECT_ID}/consultar-fecha-estimada-entrega-cloudbuild",
         "--region",
         "us-east4",
         "--platform",
